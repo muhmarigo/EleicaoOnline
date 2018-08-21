@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EleiçãoOnline.Models
+namespace EleicaoOnline.Models
 {
     public class Partido
     {
         public int Id { get; set; }
-        public int Numero { get; set; }
+        public byte Numero { get; set; }
         public string Nome { get; set; }
     }
 }

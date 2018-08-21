@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EleiçãoOnline", "EleiçãoOnline\EleiçãoOnline.csproj", "{48611187-00F3-44D0-82D5-F5FE1C864F63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EleicaoOnline", "EleiçãoOnline\EleicaoOnline.csproj", "{48611187-00F3-44D0-82D5-F5FE1C864F63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EleicaoOnline.Test", "EleiçãoOnline.Test\EleicaoOnline.Test.csproj", "{F114011D-E3A8-4A78-9141-ED9F268D82F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{48611187-00F3-44D0-82D5-F5FE1C864F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48611187-00F3-44D0-82D5-F5FE1C864F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48611187-00F3-44D0-82D5-F5FE1C864F63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F114011D-E3A8-4A78-9141-ED9F268D82F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F114011D-E3A8-4A78-9141-ED9F268D82F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F114011D-E3A8-4A78-9141-ED9F268D82F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F114011D-E3A8-4A78-9141-ED9F268D82F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,8 +12,11 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.InMemory;
+using EleicaoOnline.Services;
+using EleicaoOnline.Data;
+using EleicaoOnline.Validators;
 
-namespace EleiçãoOnline
+namespace EleicaoOnline
 {
     public class Startup
     {
@@ -27,7 +30,16 @@ namespace EleiçãoOnline
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<EleicaoContext>(x => x.UseInMemoryDatabase(Guid.NewGuid().ToString()), ServiceLifetime.Singleton);
             services.AddEntityFrameworkInMemoryDatabase();
+            services.AddScoped<PartidoService>();
+            services.AddScoped<PartidoValidator>();
+            services.AddScoped<PoliticoService>();
+            services.AddScoped<PoliticoValidator>();
+            services.AddScoped<EleicaoService>();
+            services.AddScoped<EleicaoValidator>();
+            services.AddScoped<CandidatoService>();
+            services.AddScoped<CanditatoValidator>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -38,12 +50,7 @@ namespace EleiçãoOnline
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-            }
 
-            app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

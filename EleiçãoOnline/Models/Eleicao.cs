@@ -1,12 +1,12 @@
-﻿using EleiçãoOnline.Enums;
+﻿using EleicaoOnline.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EleiçãoOnline.Models
+namespace EleicaoOnline.Models
 {
-    public class Eleição
+    public class Eleicao
     {
         public int Id { get; set; }
         public int Ano { get; set; }

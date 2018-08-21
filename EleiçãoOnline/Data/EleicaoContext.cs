@@ -1,22 +1,30 @@
-﻿using EleiçãoOnline.Models;
+﻿using EleicaoOnline.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EleiçãoOnline.Data
+namespace EleicaoOnline.Data
 {
-    public class EleiçãoContext : DbContext
+    public class EleicaoContext : DbContext
     {
+
+        public EleicaoContext(DbContextOptions<EleicaoContext> options)
+            : base(options)
+        {
+        }
+
         public DbSet<Partido> Partidos { get; set; }
         public DbSet<Politico> Politicos { get; set; }
-        public DbSet<Eleição> Eleições { get; set; }
+        public DbSet<Eleicao> Eleicoes { get; set; }
         public DbSet<Candidato> Candidatos { get; set; }
+        public DbSet<Voto> Votos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Partido>(b=> {
+            modelBuilder.Entity<Partido>(b =>
+            {
                 b.Property(x => x.Nome).IsRequired();
                 b.Property(x => x.Numero).IsRequired();
 
@@ -24,7 +32,8 @@ namespace EleiçãoOnline.Data
                 b.HasIndex(x => x.Numero).IsUnique();
             });
 
-            modelBuilder.Entity<Politico>(b => {
+            modelBuilder.Entity<Politico>(b =>
+            {
 
                 b.HasIndex(x => x.CPF).IsUnique();
                 b.HasIndex(x => x.RG).IsUnique();
@@ -37,7 +46,7 @@ namespace EleiçãoOnline.Data
                 b.HasOne(x => x.Partido).WithMany();
             });
 
-            modelBuilder.Entity<Eleição>(b =>
+            modelBuilder.Entity<Eleicao>(b =>
             {
                 b.Property(x => x.Ano).IsRequired();
                 b.Property(x => x.Pais).IsRequired();
@@ -48,7 +57,7 @@ namespace EleiçãoOnline.Data
 
             modelBuilder.Entity<Candidato>(b =>
             {
-                b.HasKey(x => new { x.EleiçãoId, x.PoliticoId });
+                b.HasKey(x => new { x.EleicaoId, x.PoliticoId });
             });
         }
     }

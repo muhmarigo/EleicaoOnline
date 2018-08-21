@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EleiçãoOnline.Models
+namespace EleicaoOnline.Models
 {
     public class Candidato
     {
         public int PoliticoId { get; set; }
         public Politico Politico { get; set; }
-        public int EleiçãoId { get; set; }
-        public Eleição Eleição { get; set; }
+        public int EleicaoId { get; set; }
     }
 }

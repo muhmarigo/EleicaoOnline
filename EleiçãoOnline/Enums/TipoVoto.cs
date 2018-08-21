@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EleiçãoOnline.Enums
+namespace EleicaoOnline.Enums
 {
     public enum TipoVoto
     {
