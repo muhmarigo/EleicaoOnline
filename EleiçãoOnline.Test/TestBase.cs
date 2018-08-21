@@ -25,12 +25,7 @@ namespace EleicaoOnline.Test
 
         public TestBase()
         {
-            webHost = WebHost
-                            .CreateDefaultBuilder()
-                            .UseStartup<TestStartup>()
-                            .Build();
-
-            Services = webHost.Services;
+          
 
         }
 
